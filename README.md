@@ -24,3 +24,7 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml -n cka
 kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml -n cka
 kubectl create -f nginx-deployment.yaml
 kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml -n cka
+
+# Service
+kubectl create -f nginx-nodeport-service.yaml ( access http://localhost:30008/)
+kubectl delete -f nginx-nodeport-service.yaml

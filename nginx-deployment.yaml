@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: nginx
-  name: nginx
+  name: nginx-deployment
   namespace: cka
 spec:
   replicas: 4

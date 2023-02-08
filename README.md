@@ -28,3 +28,14 @@ kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o y
 # Service
 kubectl create -f nginx-nodeport-service.yaml ( access http://localhost:30008/)
 kubectl delete -f nginx-nodeport-service.yaml
+
+# Namespace
+kubectl create namespace cka
+kubectl delete namespace cka
+
+# Change Namespace
+kubectl config set-context --current --namespace=cka
+kubectl config view --minify | grep namespace:
+
+kubectl config set-context $(kubectl config current-context) --namespace=cka
+kubectl config view --minify | grep namespace:

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Binding
+metadata:
+  name: nginx-pod
+  namespace: cka
+target:
+  apiVersion: v1
+  kind: Node
+  name: node01

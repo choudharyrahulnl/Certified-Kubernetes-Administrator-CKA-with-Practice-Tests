@@ -10,7 +10,10 @@ kubectl delete -f nginx-pod.yaml
 kubectl run nginx --image=nginx OR kubectl run nginx-pod --image=nginx:alpine
 kubectl run custom-nginx --image=nginx
 kubectl run httpd --image=httpd:alpine
+kubectl run mosquito --image=nginx
+kubectl run bee --image=nginx
 # Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)
+kubectl get po elephant -o yaml > elephant.yaml
 kubectl run nginx --image=nginx --dry-run=client -o yaml -n cka
 kubectl run redis --image=redis:alpine --dry-run=client -o yaml -n cka
 
@@ -29,6 +32,8 @@ kubectl create -f nginx-deployment.yaml
 kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml -n cka
 kubectl create deployment --image=kodekloud/webapp-color webapp --replicas=3 -o yaml > webapp-deployment.yaml
 kubectl create deployment --image=redis redis-deploy --replicas=2 --namespace=dev-ns -o yaml > redis-deployment.yaml
+kubectl create deployment --image=nginx blue --replicas=3 -o yaml > blue-deployment.yaml
+
 
 # Service
 kubectl create -f nginx-nodeport-service.yaml ( access http://localhost:30008/)
